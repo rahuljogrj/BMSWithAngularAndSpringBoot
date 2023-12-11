@@ -1,0 +1,76 @@
+<div class="container-fluid bookbg p-5">
+
+    <div class="formbg">
+
+
+
+        <form class="p-4 bookform" [formGroup]="getbyidForm" #getbyidbook="ngForm">
+            <h1>Fetch by id Book</h1>
+
+            <div class="mt-5 mb-3">
+                <div class="row mb-3">
+                    <label for="b_id" class="col-4 col-form-label">Book Id:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_id" (ngModel)="b_id" id="b_id" #b_id class="form-control"
+                            placeholder="Book Id">
+                        <div
+                            *ngIf="getbyidForm.get('b_id')?.invalid && (getbyidForm.get('b_id')?.dirty || getbyidForm.get('b_id')?.touched)">
+                            <div *ngIf="getbyidForm.get('b_id')?.hasError('required')" class="validation text-danger">
+                                Please
+                                enter valid Id...</div>
+
+                            <div *ngIf="getbyidForm.get('b_id')?.hasError('pattern')" class="validation text-danger">
+                                ID should be a positive integer / greater than 0.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" [disabled]="getbyidForm.invalid" (click)="getById(b_id.value)"
+                        class="submitbtn btn btn-primary">Fetch by Id</button>
+                </div>
+            </div>
+
+
+            <!-- 
+            <div class="px-5" style="color:white" id="bookdetail">
+                <div *ngIf="book">
+                    <h4>book details :- </h4>
+                    <pre>{{ book | json}}</pre>
+                </div>
+            </div>
+ -->
+
+        
+
+
+        <table class=" table table-hover table-sm table-bordered ">
+            <thead class="table-dark sticky-top">
+                <tr class="text-center">
+                    <th scope="col">Id</th>
+                    <th scope="col">Book name</th>
+                    <th scope="col">Book price</th>
+                    <th scope="col">Book quantity</th>
+                    <th scope="col">Published date</th>
+                    <th scope="col">Assign author id</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr class="text-center" *ngIf="book">
+                    <td>{{ book[0] }}</td>
+                    <td>{{ book[1] }}</td>
+                    <td>{{ book[2] }}</td>
+                    <td>{{ book[3] }}</td>
+                    <td>{{ book[4] }}</td>
+                    <td>{{ book[5] }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+
+
+
+    </div>

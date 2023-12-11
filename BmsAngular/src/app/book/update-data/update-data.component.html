@@ -1,0 +1,182 @@
+<div class="container-fluid bookbg p-5">
+
+
+
+    <div class="formbg">
+
+
+
+        <form class="p-3 bookform" #updatebookForm="ngForm" [formGroup]="updateForm">
+            <h1>Update Book by Id</h1>
+            <div class="my-4">
+                <div class="row mb-3">
+                    <label for="b_id" class="col-4 col-form-label">Book Id:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_id" class="form-control" (ngModel)="b_id" id="b_id" #b_id
+                            placeholder="Book Id">
+                        <div
+                            *ngIf="updateForm.get('b_id')?.invalid && (updateForm.get('b_id')?.dirty || updateForm.get('b_id')?.touched)">
+                            <div *ngIf="updateForm.get('b_id')?.hasError('required')" class="validation text-danger">
+                                Please
+                                enter valid Id...</div>
+
+                            <div *ngIf="updateForm.get('b_id')?.hasError('pattern')" class="validation text-danger">
+                                ID should be a positive integer / greater than 0.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_name" class="col-4 col-form-label">Book name:- </label>
+                    <div class="col-8" *ngIf="updateForm">
+                        <input type="text" formControlName="b_name" class="form-control" (ngModel)="b_name" id="b_name"
+                            #b_name placeholder="Book name">
+
+                        <div
+                            *ngIf="updateForm.get('b_name')?.invalid && (updateForm.get('b_name')?.dirty || updateForm.get('b_name')?.touched)">
+                            <div *ngIf="updateForm.get('b_name')?.hasError('required')" class="validation text-danger">
+                                Name is
+                                required.</div>
+
+                            <div *ngIf="updateForm.get('b_name')?.hasError('minlength')" class="validation text-danger">
+                                Name must be at least 3 characters.
+                            </div>
+
+                            <div *ngIf="updateForm.get('b_name')?.hasError('maxlength')" class="validation text-danger">
+                                Name should be less than 50 characters.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_price" class="col-4 col-form-label">Book price:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_price" class="form-control" (ngModel)="b_price"
+                            id="b_price" #b_price placeholder="Book Price">
+
+                        <div
+                            *ngIf="updateForm.get('b_price')?.invalid && (updateForm.get('b_price')?.dirty || updateForm.get('b_price')?.touched)">
+                            <div *ngIf="updateForm.get('b_price')?.hasError('required')" class="validation text-danger">
+                                Please
+                                enter price...</div>
+
+                            <div *ngIf="updateForm.get('b_price')?.hasError('pattern')" class="validation text-danger">
+                                Please enter numbers only...
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_quantity" class="col-4 col-form-label">Book quantity:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_quntity" class="form-control" (ngModel)="b_quntity"
+                            id="b_quntity" #b_quntity placeholder="Book quantity">
+                        <div
+                            *ngIf="updateForm.get('b_quntity')?.invalid && (updateForm.get('b_quntity')?.dirty || updateForm.get('b_quntity')?.touched)">
+                            <div *ngIf="updateForm.get('b_quntity')?.hasError('required')"
+                                class="validation text-danger">Please
+                                enter quantity of book...</div>
+
+                            <div *ngIf="updateForm.get('b_quntity')?.hasError('pattern')"
+                                class="validation text-danger">
+                                Please enter numbers only...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_published_date" class="col-4 col-form-label">Book published date:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_published_date" class="form-control"
+                            (ngModel)="b_published_date" id="b_published_date" #b_published_date
+                            placeholder="DD-MM-YYYY">
+
+                        <div
+                            *ngIf="updateForm.get('b_published_date')?.invalid && (updateForm.get('b_published_date')?.dirty || updateForm.get('b_published_date')?.touched)">
+                            <div *ngIf="updateForm.get('b_published_date')?.hasError('pattern')"
+                                class="validation text-danger">
+                                Invalid date format. Please use DD-MM-YYYY.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" [disabled]="updateForm.invalid" (click)="updateBook(b_id.value)"
+                        class="submitbtn btn btn-primary">Update Book</button>
+                </div>
+            </div>
+        </form>
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+<!-- <div class="container-fluid bookbg p-5">
+    <div class="formbg">
+        
+        <form [formGroup]="bookForm" >
+             <h1>Update Book by Id</h1>
+            <div class="my-3">
+                <div class="row mb-3">
+                    <label for="b_id" class="col-4 col-form-label">Book Id:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_id" class="form-control" (ngModel)="b_id" id="b_id" #b_id placeholder="Book Id">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_name" class="col-4 col-form-label">Book name:- </label>
+                    <div class="col-8" *ngIf="bookForm">
+                        <input type="text" formControlName="b_name" class="form-control" (ngModel)="b_name" id="b_name" #b_name 
+                            placeholder="Book name">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_price" class="col-4 col-form-label">Book price:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_price" class="form-control" (ngModel)="b_price" id="b_price" #b_price 
+                            placeholder="Book Price">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_quantity" class="col-4 col-form-label">Book quantity:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_quntity" class="form-control" (ngModel)="b_quntity" id="b_quntity" #b_quntity 
+                            placeholder="Book quantity">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_published_date" class="col-4 col-form-label">Book published date:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_published_date" class="form-control" (ngModel)="b_published_date" id="b_published_date" #b_published_date 
+                            placeholder="Book published date">
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" (click)="updateBook(b_id.value)" class="submitbtn">Update Book</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->

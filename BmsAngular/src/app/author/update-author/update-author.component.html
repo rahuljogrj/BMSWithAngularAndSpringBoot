@@ -1,0 +1,99 @@
+<div class="container-fluid authorbg p-5">
+
+
+
+
+
+
+    <div class="formbg">
+
+        <form class="p-3 authorform" [formGroup]="updateForm" #updateauthorForm="ngForm">
+            <h1>Update Author by Id</h1>
+
+            <div class="my-4">
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-4 col-form-label">Author Id:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="a_id" #a_id (ngModel)="a_id" class="form-control"
+                            placeholder="Author Id">
+                        <div
+                            *ngIf="updateForm.get('a_id')?.invalid && (updateForm.get('a_id')?.dirty || updateForm.get('a_id')?.touched)">
+                            <div *ngIf="updateForm.get('a_id')?.hasError('required')" class="validation text-danger">
+                                Please
+                                enter valid Id...</div>
+
+                            <div *ngIf="updateForm.get('a_id')?.hasError('pattern')" class="validation text-danger">
+                                ID should be a positive integer / greater than 0.
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row mb-3 ">
+                    <label for="inputEmail3" class="col-4 col-form-label">Author Name:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="a_name" #a_name (ngModel)="a_name" class="form-control"
+                            placeholder="Author Name">
+                        <div
+                            *ngIf="updateForm.get('a_name')?.invalid && (updateForm.get('a_name')?.dirty || updateForm.get('a_name')?.touched)">
+                            <div *ngIf="updateForm.get('a_name')?.hasError('required')" class="validation text-danger">
+
+                                Name is
+                                required.</div>
+                        </div>
+
+                        <div *ngIf="updateForm.get('a_name')?.hasError('minlength')" class="validation text-danger">
+                            Name must be at least 3 characters.
+                        </div>
+
+                        <div *ngIf="updateForm.get('a_name')?.hasError('maxlength')" class="validation text-danger">
+                            Name should be less than 50 characters.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-4 col-form-label">Author Email:- </label>
+                    <div class="col-8">
+                        <input type="email" formControlName="a_email" #a_email (ngModel)="a_email" class="form-control"
+                            placeholder="Author Email">
+                        <div
+                            *ngIf="updateForm.get('a_email')?.invalid && (updateForm.get('a_email')?.dirty || updateForm.get('a_email')?.touched)">
+                            <div *ngIf="updateForm.get('a_email')?.hasError('required')" class="validation text-danger">
+                                Email is required.
+                            </div>
+                            <div *ngIf="updateForm.get('a_email')?.hasError('email')" class="validation text-danger">
+                                Invalid email format.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-4 col-form-label">Author Phone no.:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="a_phone" #a_phone (ngModel)="a_phone" class="form-control"
+                            placeholder="Author Phone no.">
+                        <div
+                            *ngIf="updateForm.get('a_phone')?.invalid && (updateForm.get('a_phone')?.dirty || updateForm.get('a_phone')?.touched)">
+                            <div *ngIf="updateForm.get('a_phone')?.hasError('required')" class="validation text-danger">
+                                Phone number is required.
+                            </div>
+                            <div *ngIf="updateForm.get('a_phone')?.hasError('pattern')" class="validation text-danger">
+                                Please enter a 10-digit number starting with 9, 8, 7, or 6.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" [disabled]="updateForm.invalid" (click)="updateAuthor(a_id.value)"
+                        class="submitbtn btn btn-primary">Update Author</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>

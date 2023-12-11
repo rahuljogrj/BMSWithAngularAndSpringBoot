@@ -1,0 +1,80 @@
+.bookbg {
+    height: 574px;
+    background: url("/assets/bookImages/bookbg.avif") no-repeat;
+    background-size: cover;
+
+}
+
+.formbg {
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(85, 84, 84, 0.4) 0px 5px 15px;
+    overflow: hidden;
+}
+
+
+.bookform {
+    width: 750px;
+    max-height:475px;
+    margin: auto;
+    border-radius: 30px;
+    
+}
+
+
+.bookform h1 {
+    text-align: center;
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+p {
+    color: white;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* 
+.submitbtn {
+    position: relative;
+    display: inline-block;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #614bac;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    font-weight: 600;
+    border: 2px solid #725AC1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #725AC1;
+}
+
+.submitbtn:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #6249b4;
+}
+ */
+
+
+
+.validation {
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 600;
+}

@@ -1,0 +1,128 @@
+<nav class="navbar navbar-expand-lg bg-light bg-gradient sticky-top z-3">
+  <div class="container-fluid row">
+
+    <a class="headinglink  col-7 ps-5" routerLink="">
+      <h3 class="text-start"><img width="53" height="53"
+          src="https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Book-Management-data-management-vectorslab-flat-vectorslab.png"
+          alt="external-Book-Management-data-management-vectorslab-flat-vectorslab" /> Book Management System</h3>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse col-5" id="navbarSupportedContent">
+      <ul class="text-center navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Create
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="create/booktable">Book table</a></li>
+            <li><a class="dropdown-item" routerLink="create/authortable">Author table</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Update
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="update/booktable">Book table</a></li>
+            <li><a class="dropdown-item" routerLink="update/authortable">Author table</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Delete
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="delete/booktable">Book table</a></li>
+            <li><a class="dropdown-item" routerLink="delete/authortable">Author table</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Get by id
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="getbyid/booktable">Book table</a></li>
+            <li><a class="dropdown-item" routerLink="getbyid/authortable">Author table</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Get all
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="getall/booktable">Book table</a></li>
+            <li><a class="dropdown-item" routerLink="getall/authortable">Author table</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<router-outlet></router-outlet>
+
+
+
+
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+
+    <h3>Book Management <span>System</span></h3>
+
+  </div>
+
+  <div class="footer-center">
+
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p>Kandivali (E), Mumbai </p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+91 9004425015</p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">jograhul143@gmail.com</a></p>
+    </div>
+
+    <div class="footer-distributed-icons mt-3">
+
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+
+    </div>
+
+  </div>
+
+  <div class="footer-right">
+
+
+    <p class="footer-company-about">
+      <span>About the company</span>
+    </p>
+    <video width="350" height="200" controls>
+      <source src="\assets\bmsvideo.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+
+<div class="text-center mt-2">
+  <h4 class="footer-company-name">Created By Rahul Jog | © 2023 All Rights Reserved.</h4>
+</div>
+
+
+</footer>

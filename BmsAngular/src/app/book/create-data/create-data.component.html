@@ -1,0 +1,100 @@
+<div class="container-fluid bookbg p-5">
+
+
+
+
+
+    <div class="formbg">
+
+        <form class="p-3 bookform" [formGroup]="createForm" #createbookForm="ngForm">
+
+            <h1>Create New Book</h1>
+
+            <div class="my-5">
+                <div class="row mb-3 ">
+                    <label for="b_name" class="col-4 col-form-label">Book name:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_name" #b_name (ngModel)="b_name" class="form-control"
+                            id="b_name" placeholder="Book name">
+                        <div
+                            *ngIf="createForm.get('b_name')?.invalid && (createForm.get('b_name')?.dirty || createForm.get('b_name')?.touched)">
+                            <div *ngIf="createForm.get('b_name')?.hasError('required')" class="validation text-danger">Name is
+                                required.</div>
+
+                            <div *ngIf="createForm.get('b_name')?.hasError('minlength')" class="validation text-danger">
+                                Name must be at least 3 characters.
+                            </div>
+
+                            <div *ngIf="createForm.get('b_name')?.hasError('maxlength')" class="validation text-danger">
+                                Name should be less than 50 characters.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="b_price" class="col-4 col-form-label">Book price:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_price" #b_price (ngModel)="b_price" class="form-control"
+                            id="b_price" placeholder="Book Price">
+                        <div
+                            *ngIf="createForm.get('b_price')?.invalid && (createForm.get('b_price')?.dirty || createForm.get('b_price')?.touched)">
+                            <div *ngIf="createForm.get('b_price')?.hasError('required')" class="validation text-danger">Please
+                                enter price...</div>
+
+                            <div *ngIf="createForm.get('b_price')?.hasError('pattern')" class="validation text-danger">
+                                Please enter numbers only...
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label for="b_quntity" class="col-4 col-form-label">Book quantity:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_quntity" #b_quntity (ngModel)="b_quntity"
+                            class="form-control" id="b_quntity" placeholder="Book quantity">
+                        <div
+                            *ngIf="createForm.get('b_quntity')?.invalid && (createForm.get('b_quntity')?.dirty || createForm.get('b_quntity')?.touched)">
+                            <div *ngIf="createForm.get('b_quntity')?.hasError('required')" class="validation text-danger">Please
+                                enter quantity of book...</div>
+
+                            <div *ngIf="createForm.get('b_quntity')?.hasError('pattern')" class="validation text-danger">
+                                Please enter numbers only...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label for="b_published_date" class="col-4 col-form-label">Published date:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="b_published_date" #b_published_date
+                            (ngModel)="b_published_date" class="form-control" id="b_published_date"
+                            placeholder="DD-MM-YYYY">
+
+                        <div
+                            *ngIf="createForm.get('b_published_date')?.invalid && (createForm.get('b_published_date')?.dirty || createForm.get('b_published_date')?.touched)">
+                            <div *ngIf="createForm.get('b_published_date')?.hasError('pattern')" class="validation text-danger">
+                                Invalid date format. Please use DD-MM-YYYY.
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" [disabled]="createForm.invalid" (click)="register(createbookForm)"
+                    class="submitbtn btn btn-primary">Add Book</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,71 @@
+.authorbg{
+    height:574px;
+    background: url("/assets/bookImages/bookbg.avif") no-repeat;
+    background-size: cover;
+    
+}
+
+
+.authorform h1{
+    text-align: center;
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+}
+.tablelist{
+    max-height:380px;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+table th{
+    font-size: 18px;
+    text-align: center;
+}
+
+table td{
+    font-size: 15px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+p{
+    color:white;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+/* .submitbtn {
+    position: relative;
+    display: inline-block;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    font-weight: 600;
+    border: 2px solid #725AC1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #725AC1;
+}
+
+.submitbtn:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #6249b4;
+} */
+
+
+
+.validation {
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 600;
+}

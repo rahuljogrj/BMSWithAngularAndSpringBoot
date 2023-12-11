@@ -1,0 +1,89 @@
+<div class="container-fluid authorbg p-5">
+
+
+
+
+
+
+    <div class="formbg">
+
+        <form class="p-5 authorform" [formGroup]="createAuthor" #createauthorForm="ngForm">
+
+            <h1>Create New Author</h1>
+
+            <div class="my-5">
+                <div class="row mb-3 ">
+                    <label for="a_name" class="col-4 col-form-label">Author Name:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="a_name" #a_name (ngModel)="a_name" class="form-control"
+                            placeholder="Author Name">
+                        <div
+                            *ngIf="createAuthor.get('a_name')?.invalid && (createAuthor.get('a_name')?.dirty || createAuthor.get('a_name')?.touched)">
+                            <div *ngIf="createAuthor.get('a_name')?.hasError('required')"
+                                class="validation text-danger">Name is
+                                required.</div>
+
+                            <div *ngIf="createAuthor.get('a_name')?.hasError('minlength')"
+                                class="validation text-danger">
+                                Name must be at least 3 characters.
+                            </div>
+
+                            <div *ngIf="createAuthor.get('a_name')?.hasError('maxlength')"
+                                class="validation text-danger">
+                                Name should be less than 50 characters.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label for="a_email" class="col-4 col-form-label">Author Email:- </label>
+                    <div class="col-8">
+                        <input type="email" formControlName="a_email" #a_email (ngModel)="a_email" class="form-control"
+                            placeholder="Author Email">
+                        <div
+                            *ngIf="createAuthor.get('a_email')?.invalid && (createAuthor.get('a_email')?.dirty || createAuthor.get('a_email')?.touched)">
+                            <div *ngIf="createAuthor.get('a_email')?.hasError('required')"
+                                class="validation text-danger">
+                                Email is required.
+                            </div>
+                            <div *ngIf="createAuthor.get('a_email')?.hasError('email')" class="validation text-danger">
+                                Invalid email format.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label for="a_phone" class="col-4 col-form-label">Author Phone no.:- </label>
+                    <div class="col-8">
+                        <input type="text" formControlName="a_phone" #a_phone (ngModel)="a_phone" class="form-control"
+                            placeholder="Author Phone no.">
+
+                        <div
+                            *ngIf="createAuthor.get('a_phone')?.invalid && (createAuthor.get('a_phone')?.dirty || createAuthor.get('a_phone')?.touched)">
+                            <div *ngIf="createAuthor.get('a_phone')?.hasError('required')" class="validation text-danger">
+                                Phone number is required.
+                            </div>
+                            <div *ngIf="createAuthor.get('a_phone')?.hasError('pattern')" class="validation text-danger">
+                                Invalid phone number format. Please enter a 10-digit number starting with 9, 8, 7, or 6.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="text-center">
+                    <button type="submit" [disabled]="createAuthor.invalid" (click)="register(createauthorForm)"
+                        class="submitbtn btn btn-primary">Add
+                        Author</button>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
